@@ -1,0 +1,40 @@
+.movieContainer {
+  padding: 20px;
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+}
+
+.movieCard {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.movieCard img {
+  width: 100%;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+.movieCard:hover img {
+  filter: blur(2px);
+}
+
+.movieCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease;
+}
+
+.movieCard:hover::after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
